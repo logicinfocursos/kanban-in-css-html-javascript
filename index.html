@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="./kanban.css">
+    <title>kanban board</title>
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="kanban-heading">
+            <strong class="kanban-heading-text">quadro kanban (css/html/javascript only)</strong>
+        </div>
+        <div class="kanban-board">
+            <div class="kanban-block" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <strong>stories</strong>
+                <div class="task-button-block">
+                    <button id="task-button" onclick="createTask()">create new task</span>
+                </div>
+                <div class="task" id="task1" draggable="true" ondragstart="drag(event)">
+                    <span>task 1</span>
+                    <p style="font-size:x-small">details</p>
+                    <hr/>
+                    <p style="font-size:xx-small; color:cadetblue">created deadline daysLeft owner</p>
+                </div>
+                <div class="task" id="task2" draggable="true" ondragstart="drag(event)">
+                    <span>task 2</span>
+                    <p style="font-size:x-small">details</p>
+                    <hr/>
+                    <p style="font-size:xx-small; color:cadetblue">created deadline daysLeft owner</p>
+                </div>
+                <div class="task" id="task3" draggable="true" ondragstart="drag(event)">
+                    <span>task 3</span>
+                    <p style="font-size:x-small">details</p>
+                    <hr/>
+                    <p style="font-size:xx-small; color:cadetblue">created deadline daysLeft owner</p>
+                </div>
+                <div class="task" id="task4" draggable="true" ondragstart="drag(event)">
+                    <span>task 4</span>
+                    <p style="font-size:x-small">details</p>
+                    <hr/>
+                    <p style="font-size:xx-small; color:cadetblue">created deadline daysLeft owner</p>
+                </div>
+                <div class="task" id="task5" draggable="true" ondragstart="drag(event)">
+                    <span>task 5</span>
+                    <p style="font-size:x-small">details</p>
+                    <hr/>
+                    <p style="font-size:xx-small; color:cadetblue">created deadline daysLeft owner</p>
+                </div>
+            </div>
+            <div class="kanban-block" id="stories" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <strong>to do</strong>                
+            </div>
+            
+            <div class="kanban-block" id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <strong>in progress</strong>
+            </div>
+            <div class="kanban-block" id="verify" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <strong>in verify / testing</strong>                
+            </div>
+            <div class="kanban-block" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <strong>done</strong>
+            </div>
+            <div class="create-new-task-block" id="create-new-task-block">
+                <strong>add task</strong>
+                <span class="form-row">
+                    <label class="form-row-label" for="task-name">task</label>
+                    <input class="form-row-input" type="text" name="task-name" id="task-name">
+                </span>
+                <span class="form-row">
+                    <label class="form-row-label" for="task-name">details</label>
+                    <textarea class="form-row-input" name="task-description" id="task-description" cols="70" rows="10"></textarea>
+                </span>
+                <span class="form-row">
+                    <label class="form-row-label" for="task-name">status</label>
+                    <select class="form-row-input" name="task-status" id="task-status">
+                        <option value="stories">stories</option>
+                        <option value="todo">do do</option>
+                        <option value="inprogress">in progress</option>
+                        <option value="inprogress">verity</option>
+                        <option value="done">done</option>
+                    </select>
+                </span>
+                <span class="form-row-buttons">
+                    <button id="edit-button" onclick="editTask()">edit</span>
+                    <button id="save-button" onclick="saveTask()">save</span>
+                    <button id="cancel-button" onclick="createTask()">cancel</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
